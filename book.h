@@ -10,17 +10,13 @@
 
 class Book : public product {
 public:
-  std::set<std::string> keywords() const {
-    return parseStringToWords(name_);
-  }
 
-  std::string displayString() const {
-    return (name_ + "\nAuthor: " + 
-  }
+  Book(const std::string name, double price, int qty, const std::string isbn);
+  std::set<std::string> keywords() const;
 
-  void dump(std::ostream& os) const {
-    os << displayString();
-  }
+  std::string displayString() const;
+
+  void dump(std::ostream& os) const;
 
 protected:
   std::string isbn_;
