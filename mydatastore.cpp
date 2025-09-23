@@ -26,7 +26,7 @@ std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int t
     for (std::string temp : terms) {
       for (Product* p : products) {
         if (p -> getName() == temp) {
-          comparator.push_back(terms);
+          comparator.push_back(temp);
         }
       }
       ret = setUnion(ret, comparator);
@@ -38,7 +38,7 @@ std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int t
     for (std::string temp : terms) {
       for (Product* p : products) {
         if (p -> getName() == temp) {
-          comparator.push_back(terms);
+          comparator.push_back(temp);
         }
       }
       ret = setIntersection(ret, comparator);
