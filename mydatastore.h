@@ -32,6 +32,10 @@ public:
      * Reproduce the database file from the current Products and User values
      */
   void dump(std::ostream& ofile);
+
+
+  std::vector<Product*> getp;
+  std::vector<User*> getu;
 protected:
   std::vector<Product*> products;
   std::vector<User*> users;
