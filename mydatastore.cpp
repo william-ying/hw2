@@ -26,7 +26,7 @@ std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int t
     for (std::string temp : terms) {
       for (Product* p : products) {
         if (p -> getName() == temp) {
-          comparator.push_back(temp);
+          comparator.push_back(p);
         }
       }
       ret = setUnion(ret, comparator);
@@ -38,7 +38,7 @@ std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int t
     for (std::string temp : terms) {
       for (Product* p : products) {
         if (p -> getName() == temp) {
-          comparator.push_back(temp);
+          comparator.push_back(p);
         }
       }
       ret = setIntersection(ret, comparator);
@@ -51,14 +51,14 @@ std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int t
  * Reproduce the database file from the current Products and User values
  */
 void MyDataStore::dump(std::ostream& ofile) {
-  os << "<products>" << endl;
+  ofile << "<products>" << endl;
   for (Product* p : products) {
-    p->dump(os);
+    p->dump(ofile);
   }
-  os << "</products>" << endl << "<users>" << endl;
+  ofile << "</products>" << endl << "<users>" << endl;
   for (User* u : users) {
-    u->dump(os);
+    u->dump(ofile);
   }
-  os << "</users>";
+  ofile << "</users>";
   
 }
