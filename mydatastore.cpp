@@ -21,29 +21,33 @@ void MyDataStore::addUser(User* u) {
  *  type 1 = OR search (union of results for each term)
  */
 std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int type) {
-  std::vector<Product*> ret;
-  std::vector<Product*> comparator;
+  std::set<Product*> base;
+  std::set<Product*> comparator;
   if (type == 1) {
     for (std::string temp : terms) {
       for (Product* p : products) {
         if (p -> getName() == temp) {
-          comparator.push_back(p);
+          comparator.insert(p);
         }
       }
-      ret = setUnion(ret, comparator);
+      base = setUnion(base, comparator);
     }
   } else {
     for (Product* p : products) {
-      ret.push_back(p);
+      ret.insert(p);
     }
     for (std::string temp : terms) {
       for (Product* p : products) {
         if (p -> getName() == temp) {
-          comparator.push_back(p);
+          comparator.insert(p);
         }
       }
-      ret = setIntersection(ret, comparator);
+      base = setIntersection(base, comparator);
     }
+  }
+  std::vector<Product*> ret;
+  for (Product* p : base) {
+    ret.push_back(p);
   }
   return ret;
 }
