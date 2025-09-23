@@ -1,6 +1,7 @@
 #ifndef MYDATASTORE_H
 #define MYDATASTORE_H
 #include "datastore.h"
+#include "util.h"
 
 /**
  * DataStore Interface needed for parsing and instantiating products and users
@@ -12,7 +13,9 @@
 
 
 class MyDataStore : DataStore {
-
+protected:
+  std::vector<Product*> products;
+  std::vector<User*> users;
 };
 
 #endif
