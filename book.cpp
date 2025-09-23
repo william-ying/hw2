@@ -9,8 +9,8 @@ Book::Book(const std::string name, double price, int qty, const std::string isbn
 {}
 
 std::set<std::string> Book::keywords() const {
-  std::set<std::string> ret1 = parseStringToWords(name_);
-  std::set<std::string> ret2 = parseStringToWords(author_);
+  std::set<std::string> ret1 = util.parseStringToWords(name_);
+  std::set<std::string> ret2 = util.parseStringToWords(author_);
   ret1.merge(ret2);
   ret1.insert(isbn_);
   return ret1;
@@ -21,5 +21,5 @@ std::string Book::displayString() const {
 }
 
 void Book::dump(std::ostream& os) const {
-  os << displayString();
+  os << util.displayString();
 }
