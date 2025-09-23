@@ -67,3 +67,10 @@ void MyDataStore::dump(std::ostream& ofile) {
   ofile << "</users>";
   
 }
+
+std::vector<Product*> MyDataStore::getp() {
+  return products;
+}
+std::vector<User*> MyDataStore::getu() {
+  return users;
+}
