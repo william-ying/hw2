@@ -34,7 +34,7 @@ std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int t
     }
   } else {
     for (Product* p : products) {
-      ret.insert(p);
+      base.insert(p);
     }
     for (std::string temp : terms) {
       for (Product* p : products) {
