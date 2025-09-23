@@ -19,5 +19,5 @@ std::string Movie::displayString() const {
 }
 
 void Movie::dump(std::ostream& os) const {
-  os << displayString();
+  os << displayString() << endl;
 }
