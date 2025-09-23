@@ -11,12 +11,12 @@ Clothing::Clothing(const std::string name, double price, int qty, const std::str
 std::set<std::string> Clothing::keywords() const {
   std::set<std::string> ret1 = parseStringToWords(name_);
   std::set<std::string> ret2 = parseStringToWords(brand_);
-  ret1.merge(ret2);
+  ret1.insert(ret2.begin(), ret2.end());
   return ret1;
 }
 
 std::string Clothing::displayString() const {
-  return (name_ + "\nSize: " + size_ + " Brand: " + brand_ + "\n" + price + " " + qty + " left.");
+  return (name_ + "\nSize: " + size_ + " Brand: " + brand_ + "\n" + to_string(price_) + " " + to_string(qty_) + " left.");
 }
 
 void Clothing::dump(std::ostream& os) const {
