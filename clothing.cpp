@@ -2,7 +2,7 @@
 
 using namespace std;
 
-Clothing::Clothing(const std::string name, double price, int qty, const std::string size, const std::string brand);
+Clothing::Clothing(const std::string name, double price, int qty, const std::string size, const std::string brand) :
   Product("clothing", name, price, qty),
   size_(size),
   brand_(brand)
