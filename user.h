@@ -3,6 +3,11 @@
 #include <iostream>
 #include <string>
 
+#include "product.h"
+#include "clothing.h"
+#include "book.h"
+#include "movie.h"
+
 /**
  * Implements User functionality and information storage
  *  You should not need to derive anything from User at this time
@@ -22,5 +27,6 @@ private:
     std::string name_;
     double balance_;
     int type_;
+    std::vector<Product*> cart;
 };
 #endif
