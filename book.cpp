@@ -23,5 +23,3 @@ std::string Book::displayString() const {
 void Book::dump(std::ostream& os) const {
   os << displayString();
 }
-
-#endif
