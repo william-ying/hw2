@@ -9,8 +9,8 @@ Clothing::Clothing(const std::string name, double price, int qty, const std::str
 {}
 
 std::set<std::string> Clothing::keywords() const {
-  std::set<std::string> ret1 = util.parseStringToWords(name_);
-  std::set<std::string> ret2 = util.parseStringToWords(brand_);
+  std::set<std::string> ret1 = parseStringToWords(name_);
+  std::set<std::string> ret2 = parseStringToWords(brand_);
   ret1.merge(ret2);
   return ret1;
 }
