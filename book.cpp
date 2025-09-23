@@ -1,21 +1,23 @@
 #include "book.h"
 
-class Book : public product {
-public:
-  std::set<std::string> keywords() const {
-    return parseStringToWords(name_);
-  }
+using namespace std;
 
-  std::string displayString() const {
-    return (name_ + "\nAuthor: " + 
-  }
+Book::Book(const std::string name, double price, int qty, const std::string isbn, const std::string author) :
+  Product("book", name, price, qty),
+  isbn_(isbn),
+  author_(author)
+{}
 
-  void dump(std::ostream& os) const {
-    os << displayString();
-  }
+std::set<std::string> Book::keywords() const {
+  return parseStringToWords(name_);
+}
 
-protected:
-  std::string isbn_;
+std::string Book::displayString() const {
+  return (name_ + "\nAuthor: " + author_ + " ISBN: " + isbn_ + "\n" + price + " " + qty + " left.");
+}
+
+void Book::dump(std::ostream& os) const {
+  os << displayString();
 }
 
 #endif
