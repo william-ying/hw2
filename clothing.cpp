@@ -20,5 +20,5 @@ std::string Clothing::displayString() const {
 }
 
 void Clothing::dump(std::ostream& os) const {
-  os << this.displayString();
+  os << displayString();
 }
