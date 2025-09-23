@@ -34,8 +34,8 @@ public:
   void dump(std::ostream& ofile);
 
 
-  std::vector<Product*> getp;
-  std::vector<User*> getu;
+  std::vector<Product*> getp();
+  std::vector<User*> getu();
 protected:
   std::vector<Product*> products;
   std::vector<User*> users;
