@@ -55,7 +55,7 @@ void MyDataStore::dump(std::ostream& ofile) {
   for (Product* p : products) {
     p->dump(os);
   }
-  os << "</products>" << endl << <users> << endl;
+  os << "</products>" << endl << "<users>" << endl;
   for (User* u : users) {
     u->dump(os);
   }
