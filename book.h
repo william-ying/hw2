@@ -21,6 +21,6 @@ public:
 protected:
   std::string isbn_;
   std::string author_;
-}
+};
 
 #endif
