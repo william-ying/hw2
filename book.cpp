@@ -12,6 +12,7 @@ std::set<std::string> Book::keywords() const {
   std::set<std::string> ret1 = parseStringToWords(name_);
   std::set<std::string> ret2 = parseStringToWords(author_);
   ret1.merge(ret2);
+  ret1.insert(isbn_);
   return ret1;
 }
 
