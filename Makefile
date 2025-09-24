@@ -20,8 +20,15 @@ product.o: product.cpp product.h
 	$(CXX) $(CXXFLAGS) $(DEFS) -o $@ -c product.cpp
 product_parser.o: product_parser.cpp product_parser.h product.h 
 	$(CXX) $(CXXFLAGS) $(DEFS) -o $@ -c product_parser.cpp
-util.o: util.cpp util.h
-	$(CXX) $(CXXFLAGS) $(DEFS) -o $@ -c util.cpp
+mydatastore.o: mydatastore.cpp mydatastore.o
+	$(CXX) $(CXXFLAGS) $(DEFS) -o $@ -c mydatastore.cpp
+book.o: book.cpp book.h
+	$(CXX) $(CXXFLAGS) $(DEFS) -o $@ -c book.cpp
+movie.o: movie.cpp movie.h
+	$(CXX) $(CXXFLAGS) $(DEFS) -o $@ -c movie.cpp
+clothing.o: clothing.cpp clothing.h
+	$(CXX) $(CXXFLAGS) $(DEFS) -o $@ -c clothing.cpp
+
 
 
 clean:
