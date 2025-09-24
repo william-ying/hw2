@@ -2,6 +2,10 @@
 #define PRODUCT_PARSER_H
 #include <string>
 #include <iostream>
+#include "book.h"
+#include "clothing.h"
+#include "movie.h"
+#include "util.h"
 #include "product.h"
 
 class ProductParser
