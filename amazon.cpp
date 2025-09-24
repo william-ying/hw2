@@ -100,7 +100,13 @@ int main(int argc, char* argv[])
                 done = true;
             }
 	    /* Add support for other commands here */
-
+			else if ( cmd == "ADD") {
+				
+			} else if ( cmd == "VIEWCART") {
+				a;
+			} else if ( cmd == "BUYCART") {
+				a;
+			}
 
 
 
