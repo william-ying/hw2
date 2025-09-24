@@ -22,11 +22,13 @@ public:
     std::string getName() const;
     void deductAmount(double amt);
     virtual void dump(std::ostream& os);
+    std::vector<Product*> cart;
+    
 
 private:
     std::string name_;
     double balance_;
     int type_;
-    std::vector<Product*> cart;
+    
 };
 #endif
