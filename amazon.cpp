@@ -123,9 +123,9 @@ int main(int argc, char* argv[])
 				}
 				
 			} else if ( cmd == "VIEWCART") {
-				a;
+				//a;
 			} else if ( cmd == "BUYCART") {
-				a;
+				//a;
 			}
 
 
