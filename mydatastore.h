@@ -36,6 +36,7 @@ public:
 
   std::vector<Product*> getp();
   std::vector<User*> getu();
+  std::map<std::string, std::string> pairings;
 protected:
   std::vector<Product*> products;
   std::vector<User*> users;
