@@ -107,7 +107,7 @@ int main(int argc, char* argv[])
 				if (ss >> username) {
 					int hitnum;
 					if (ss >> hitnum) {
-						if (hitnum < hits.size() && hitnum >= 0) {
+						if (hitnum >= 0 && hitnum < hits.size()) {
 							for (User* u : ds.getu()) {
 								if (u->getName() == username) {
 									u->cart.push_back(hits[hitnum]);
@@ -123,9 +123,47 @@ int main(int argc, char* argv[])
 				}
 				
 			} else if ( cmd == "VIEWCART") {
-				//a;
+				string username;
+				bool unsuccess = true;
+				if (ss >> username) {
+					for (User* u : ds.getu()) {
+						if (u->getName() == username) {
+							for (Product* p : u->cart) {
+								p->dump(cout);
+							}
+							unsuccess = false;
+							break;
+						}
+					}
+				}
+				if (unsuccess) {
+					cout << "Invalid request" << endl;
+				}
 			} else if ( cmd == "BUYCART") {
-				//a;
+				string username;
+				bool unsuccess = true;
+				if (ss >> username) {
+					for (User* u : ds.getu()) {
+						if (u->getName() == username) {
+							std::vector<Product*> newcart = u->cart;
+							int offsetter = 0;
+							for (int i = 0; i < newcart.size(); i++) {
+								if (newcart[i - offsetter] -> getQty() == 0) {
+								} else if (u->getBalance() >= newcart[i - offsetter]->getPrice()) {
+									newcart[i - offsetter]->subtractQty(1);
+									u->cart.erase(u->cart.begin() + i - offsetter);
+									offsetter++;
+									u->deductAmount(newcart[i - offsetter + 1]->getPrice());
+								}
+							}
+							unsuccess = false;
+							break;
+						}
+					}
+				}
+				if (unsuccess) {
+					cout << "Invalid request" << endl;
+				}
 			}
 
 
