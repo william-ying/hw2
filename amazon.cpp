@@ -101,6 +101,25 @@ int main(int argc, char* argv[])
             }
 	    /* Add support for other commands here */
 			else if ( cmd == "ADD") {
+				string username;
+				bool unsuccess = true;
+				if (ss >> username) {
+					int hitnum;
+					if (ss >> hitnum) {
+						if (hitnum < hits.size() && hitnum >= 0) {
+							for (User* u : ds.getu()) {
+								if (u->getName() == username) {
+									u->cart.push_back(hits[hitnum]);
+									unsuccess = false;
+									break;
+								}
+							}
+						}
+					}
+				}
+				if (unsuccess) {
+					cout << "Invalid request" << endl;
+				}
 				
 			} else if ( cmd == "VIEWCART") {
 				a;
