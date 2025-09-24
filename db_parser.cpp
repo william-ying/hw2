@@ -127,7 +127,7 @@ void ProductSectionParser::addProductParser(ProductParser* p)
 
 bool ProductSectionParser::parse(
     std::istream& is,
-    DataStore& ds,
+    MyDataStore& ds,
     int& lineno,
     std::string& errorMsg)
 {
@@ -185,7 +185,7 @@ UserSectionParser::UserSectionParser()
 }
 bool UserSectionParser::parse(
     std::istream& is,
-    DataStore& ds,
+    MyDataStore& ds,
     int& lineno,
     std::string& errorMsg)
 {
@@ -206,7 +206,7 @@ bool UserSectionParser::parse(
 }
 User* UserSectionParser::parseUser(
     std::istream& is,
-    DataStore& ds,
+    MyDataStore& ds,
     std::string& errorMsg)
 {
     string username;
