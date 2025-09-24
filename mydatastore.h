@@ -1,6 +1,7 @@
 #ifndef MYDATASTORE_H
 #define MYDATASTORE_H
 #include "datastore.h"
+#include <map>
 #include "util.h"
 
 /**
