@@ -8,7 +8,7 @@ Clothing::Clothing(const std::string name, double price, int qty, const std::str
   brand_(brand)
 {}
 
-Clothing::~Clothing() {};
+Clothing::~Clothing() {}
 
 std::set<std::string> Clothing::keywords() const {
   std::set<std::string> ret1 = parseStringToWords(name_);
