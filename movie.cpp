@@ -8,6 +8,8 @@ Movie::Movie(const std::string name, double price, int qty, const std::string ge
   rating_(rating)
 {}
 
+Movie::~Movie() {}
+
 std::set<std::string> Movie::keywords() const {
   std::set<std::string> ret1 = parseStringToWords(name_);
   ret1.insert(genre_);
