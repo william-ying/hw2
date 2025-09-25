@@ -15,6 +15,7 @@
 
 class MyDataStore {
 public:
+  ~MyDataStore();
   void addProduct(Product* p);
 
     /**
