@@ -3,6 +3,27 @@
 
 using namespace std;
 
+MyDataStore::~MyDataStore() {
+  for(map<string, std::set<Product*>>::iterator it = pairings.begin();
+            it != pairings.end();
+            ++it) {
+        for(map<string, std::set<Product*>>::iterator it2 = it->second.begin();
+                it2 != it->second.end();
+                ++it2) {
+            delete it2->second;
+                }
+        delete it->second;
+            }
+  for (Product* p : products) {
+    delete p;
+  }
+  products.clear();
+  for (User* u : users) {
+    delete u;
+  }
+  users.clear();
+}
+
 void MyDataStore::addProduct(Product* p) {
   products.push_back(p);
 
