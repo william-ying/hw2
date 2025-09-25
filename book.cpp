@@ -8,6 +8,8 @@ Book::Book(const std::string name, double price, int qty, const std::string isbn
   author_(author)
 {}
 
+Book::~Book() {}
+
 std::set<std::string> Book::keywords() const {
   std::set<std::string> ret1 = parseStringToWords(name_);
   std::set<std::string> ret2 = parseStringToWords(author_);
