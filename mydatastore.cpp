@@ -44,15 +44,13 @@ std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int t
     for (std::string temp : terms) {
       std::set<Product*> comparator;
       temp = convToLower(temp);
-      if (pairings.count(temp) == 0) {
-        for (Product* p : products) {
-          if (p->keywords().count(temp) == 1) {
-            comparator.insert(p);
-          }
+      for (Product* p : products) {
+        if (p->keywords().count(temp) == 1) {
+          comparator.insert(p);
         }
-        pairings[temp] = comparator;
       }
-      base = setUnion(base, pairings[temp]);
+      
+      base = setUnion(base, comparator);
     }
   } else {
     for (Product* p : products) {
@@ -61,15 +59,13 @@ std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int t
     for (std::string temp : terms) {
       std::set<Product*> comparator;
       temp = convToLower(temp);
-      if (pairings.count(temp) == 0) {
-        for (Product* p : products) {
-          if (p->keywords().count(temp) == 1) {
-            comparator.insert(p);
-          }
+      for (Product* p : products) {
+        if (p->keywords().count(temp) == 1) {
+          comparator.insert(p);
         }
-        pairings[temp] = comparator;
       }
-      base = setIntersection(base, pairings[temp]);
+      
+      base = setIntersection(base, comparator);
     }
   }
   std::vector<Product*> ret;
