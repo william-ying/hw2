@@ -174,7 +174,7 @@ int main(int argc, char* argv[])
         }
 
     }
-	delete DBParser;
+	delete parser;
     return 0;
 }
 
