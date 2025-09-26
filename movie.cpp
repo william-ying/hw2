@@ -24,7 +24,7 @@ void Movie::dump(std::ostream& os) const {
   os << "movie" << endl;
   os << name_ << endl;
   os << to_string(price_) << endl;
-  os << to_string(qty) << endl;
+  os << to_string(qty_) << endl;
   os << genre_ << endl;
   os << rating_ << endl;
 }
