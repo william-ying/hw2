@@ -128,8 +128,9 @@ int main(int argc, char* argv[])
 				if (ss >> username) {
 					for (User* u : ds.getu()) {
 						if (u->getName() == username) {
+							int i = 0;
 							for (Product* p : u->cart) {
-								cout << p->displayString() << endl;
+								cout << "item " << i << ":" << endl << p->displayString() << endl;
 							}
 							unsuccess = false;
 							break;
