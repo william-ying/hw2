@@ -35,20 +35,16 @@ std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int t
   std::set<Product*> base;
   if (type == 1) {
     for (std::string temp : terms) {
-      cout << temp << endl;
       std::set<Product*> comparator;
       temp = convToLower(temp);
       for (Product* p : products) {
-        cout << "product" << endl;
         if (p->keywords().count(temp) == 1) {
           comparator.insert(p);
         }
       }
-      cout << endl;
       base = setUnion(base, comparator);
     }
   } else {
-    cout << "intersection" << endl;
     for (Product* p : products) {
       base.insert(p);
     }
@@ -64,10 +60,12 @@ std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int t
       base = setIntersection(base, comparator);
     }
   }
+  cout << "converting to ret" << endl;
   std::vector<Product*> ret;
   for (Product* p : base) {
     ret.push_back(p);
   }
+  cout << "finished ret conversion" << endl;
   return ret;
 }
 
