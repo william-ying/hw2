@@ -61,6 +61,7 @@ int main(int argc, char* argv[])
     cout << "  BUYCART username                   " << endl;
     cout << "  QUIT new_db_filename               " << endl;
     cout << "====================================" << endl;
+	cout << "testing" << endl;
 
     vector<Product*> hits;
     bool done = false;
