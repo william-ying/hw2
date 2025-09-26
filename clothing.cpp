@@ -25,7 +25,7 @@ void Clothing::dump(std::ostream& os) const {
   os << "clothing" << endl;
   os << name_ << endl;
   os << to_string(price_) << endl;
-  os << to_string(qty) << endl;
+  os << to_string(qty_) << endl;
   os << size_ << endl;
   os << brand_ << endl;
 }
