@@ -22,5 +22,10 @@ std::string Clothing::displayString() const {
 }
 
 void Clothing::dump(std::ostream& os) const {
-  os << displayString() << endl;
+  os << "clothing" << endl;
+  os << name_ << endl;
+  os << to_string(price_) << endl;
+  os << to_string(qty) << endl;
+  os << size_ << endl;
+  os << brand_ << endl;
 }
