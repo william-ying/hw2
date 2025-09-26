@@ -173,8 +173,7 @@ int main(int argc, char* argv[])
             }
         }
 
-    }
-	delete parser;
+	}
     return 0;
 }
 
