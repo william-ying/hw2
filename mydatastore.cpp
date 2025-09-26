@@ -44,6 +44,7 @@ std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int t
   cout << "searching" << endl;
   if (type == 1) {
     for (std::string temp : terms) {
+      temp = convToLower(temp);
       if (!pairings.count(temp)) {
         for (Product* p : products) {
           if (p->keywords().count(temp) == 1) {
@@ -59,6 +60,7 @@ std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int t
       base.insert(p);
     }
     for (std::string temp : terms) {
+      temp = convToLower(temp);
       if (!pairings.count(temp)) {
         for (Product* p : products) {
           if (p->keywords().count(temp) == 1) {
