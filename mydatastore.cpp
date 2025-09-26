@@ -7,9 +7,7 @@ MyDataStore::~MyDataStore() {
   for(map<string, std::set<Product*>>::iterator it = pairings.begin();
             it != pairings.end();
             ++it) {
-        for(std::set<Product*>::iterator it2 = it->second.begin();
-                it2 != it->second.end();
-                ++it2) {
+        for(Product* it2 : it->second) {
             delete it2;
                 }
             }
