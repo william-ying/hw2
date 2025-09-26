@@ -34,6 +34,7 @@ void MyDataStore::addUser(User* u) {
 std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int type) {
   std::set<Product*> base;
   if (type == 1) {
+    cout << "union" << endl;
     for (std::string temp : terms) {
       std::set<Product*> comparator;
       temp = convToLower(temp);
@@ -46,6 +47,7 @@ std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int t
       base = setUnion(base, comparator);
     }
   } else {
+    cout << "intersection" << endl;
     for (Product* p : products) {
       base.insert(p);
     }
