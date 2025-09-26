@@ -107,10 +107,10 @@ int main(int argc, char* argv[])
 				if (ss >> username) {
 					int hitnum;
 					if (ss >> hitnum) {
-						if (hitnum >= 0 && hitnum < hits.size()) {
+						if (hitnum >= 1 && hitnum <= hits.size()) {
 							for (User* u : ds.getu()) {
 								if (u->getName() == username) {
-									u->cart.push_back(hits[hitnum]);
+									u->cart.push_back(hits[hitnum - 1]);
 									unsuccess = false;
 									break;
 								}
