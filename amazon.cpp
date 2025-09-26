@@ -82,6 +82,7 @@ int main(int argc, char* argv[])
                 displayProducts(hits);
             }
             else if ( cmd == "OR" ) {
+				cout << "union" << endl;
                 string term;
                 vector<string> terms;
                 while(ss >> term) {
