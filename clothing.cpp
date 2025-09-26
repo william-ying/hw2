@@ -11,8 +11,8 @@ Clothing::Clothing(const std::string name, double price, int qty, const std::str
 Clothing::~Clothing() {}
 
 std::set<std::string> Clothing::keywords() const {
-  std::set<std::string> ret1 = parseStringToWords(name_);
-  std::set<std::string> ret2 = parseStringToWords(brand_);
+  std::set<std::string> ret1 = parseStringToWords(convToLower(name_));
+  std::set<std::string> ret2 = parseStringToWords(convToLower(brand_));
   ret1.insert(ret2.begin(), ret2.end());
   return ret1;
 }
