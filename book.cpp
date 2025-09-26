@@ -11,10 +11,10 @@ Book::Book(const std::string name, double price, int qty, const std::string isbn
 Book::~Book() {}
 
 std::set<std::string> Book::keywords() const {
-  std::set<std::string> ret1 = parseStringToWords(name_);
-  std::set<std::string> ret2 = parseStringToWords(author_);
+  std::set<std::string> ret1 = parseStringToWords(convToLower(name_));
+  std::set<std::string> ret2 = parseStringToWords(convToLower(author_));
   ret1.insert(ret2.begin(), ret2.end());
-  ret1.insert(isbn_);
+  ret1.insert(convToLower(isbn_));
   return ret1;
 }
 
