@@ -44,7 +44,9 @@ std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int t
           comparator.insert(p);
         }
       }
+      cout << base.size() << " " << comparator.size() << endl;
       base = setUnion(base, comparator);
+      cout << base.size() << endl << endl;
     }
   } else {
     for (Product* p : products) {
