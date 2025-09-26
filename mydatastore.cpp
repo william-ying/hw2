@@ -52,7 +52,7 @@ std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int t
         }
       }
       pairings[temp] = comparator;
-      base = setUnion(base, pairings[temp]);
+      base = setUnion(base, comparator);
     }
   } else {
     for (Product* p : products) {
@@ -68,7 +68,7 @@ std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int t
         }
       }
       pairings[temp] = comparator;
-      base = setIntersection(base, pairings[temp]);
+      base = setIntersection(base, comparator);
     }
   }
   std::vector<Product*> ret;
