@@ -40,9 +40,9 @@ void MyDataStore::addUser(User* u) {
  */
 std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int type) {
   std::set<Product*> base;
-  std::set<Product*> comparator;
   if (type == 1) {
     for (std::string temp : terms) {
+      std::set<Product*> comparator;
       temp = convToLower(temp);
       if (pairings.count(temp) == 0) {
         for (Product* p : products) {
@@ -50,8 +50,8 @@ std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int t
             comparator.insert(p);
           }
         }
+        pairings[temp] = comparator;
       }
-      pairings[temp] = comparator;
       base = setUnion(base, comparator);
     }
   } else {
@@ -59,6 +59,7 @@ std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int t
       base.insert(p);
     }
     for (std::string temp : terms) {
+      std::set<Product*> comparator;
       temp = convToLower(temp);
       if (pairings.count(temp) == 0) {
         for (Product* p : products) {
@@ -66,8 +67,8 @@ std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int t
             comparator.insert(p);
           }
         }
+        pairings[temp] = comparator;
       }
-      pairings[temp] = comparator;
       base = setIntersection(base, comparator);
     }
   }
