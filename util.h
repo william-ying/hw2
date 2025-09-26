@@ -17,6 +17,9 @@ std::set<T> setIntersection(std::set<T>& s1, std::set<T>& s2)
   typename std::set<T>::iterator it1 = s1.begin();
   typename std::set<T>::iterator it2 = s2.begin();
   while (it1 != s1.end()) {
+    if (it2 == s2.end()) {
+      break;
+    }
     if (*it1 == *it2) {
       ret.insert(*it1);
       it1++;
@@ -25,9 +28,6 @@ std::set<T> setIntersection(std::set<T>& s1, std::set<T>& s2)
       it2++;
     } else {
       it1++;
-    }
-    if (it2 == s2.end()) {
-      break;
     }
   }
   return ret;
@@ -39,6 +39,13 @@ std::set<T> setUnion(std::set<T>& s1, std::set<T>& s2)
   typename std::set<T>::iterator it1 = s1.begin();
   typename std::set<T>::iterator it2 = s2.begin();
   while (it1 != s1.end()) {
+    if (it2 == s2.end()) {
+      while (it1 != s1.end()) {
+        ret.insert(*it1);
+        it1++;
+      }
+      break;
+    }
     if (*it1 == *it2) {
       ret.insert(*it1);
       it1++;
@@ -49,13 +56,6 @@ std::set<T> setUnion(std::set<T>& s1, std::set<T>& s2)
     } else {
       ret.insert(*it1);
       it1++;
-    }
-    if (it2 == s2.end()) {
-      while (it1 != s1.end()) {
-        ret.insert(*it1);
-        it1++;
-      }
-      break;
     }
   }
   while (it2 != s2.end()) {
