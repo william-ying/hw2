@@ -33,8 +33,10 @@ void MyDataStore::addUser(User* u) {
  */
 std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int type) {
   std::set<Product*> base;
+  cout << "start search" << endl;
   if (type == 1) {
     for (std::string temp : terms) {
+      cout << temp << endl;
       std::set<Product*> comparator;
       temp = convToLower(temp);
       for (Product* p : products) {
