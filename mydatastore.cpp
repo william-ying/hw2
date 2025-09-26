@@ -47,11 +47,9 @@ std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int t
         for (Product* p : products) {
           if (p->keywords().count(temp) == 1) {
             comparator.insert(p);
-            cout << "found" << endl;
           }
         }
       }
-      cout << "or" << endl;
       pairings[temp] = comparator;
       base = setUnion(base, pairings[temp]);
     }
