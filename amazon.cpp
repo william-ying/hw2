@@ -152,12 +152,12 @@ int main(int argc, char* argv[])
 							}
 							int offsetter = 0;
 							for (int i = 0; i < newcart.size(); i++) {
-								if (newcart[i - offsetter] -> getQty() == 0) {
-								} else if (u->getBalance() >= newcart[i - offsetter]->getPrice()) {
-									newcart[i - offsetter]->subtractQty(1);
+								if (newcart[i] -> getQty() == 0) {
+								} else if (u->getBalance() >= newcart[i]->getPrice()) {
+									newcart[i]->subtractQty(1);
 									u->cart.erase(u->cart.begin() + i - offsetter);
 									offsetter++;
-									u->deductAmount(newcart[i - offsetter + 1]->getPrice());
+									u->deductAmount(newcart[i]->getPrice());
 								}
 							}
 							unsuccess = false;
