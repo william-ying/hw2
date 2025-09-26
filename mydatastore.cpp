@@ -4,13 +4,6 @@
 using namespace std;
 
 MyDataStore::~MyDataStore() {
-  for(map<string, std::set<Product*>>::iterator it = pairings.begin();
-            it != pairings.end();
-            ++it) {
-        for(Product* it2 : it->second) {
-            delete it2;
-                }
-            }
   for (Product* p : products) {
     delete p;
   }
