@@ -41,6 +41,7 @@ void MyDataStore::addUser(User* u) {
 std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int type) {
   std::set<Product*> base;
   std::set<Product*> comparator;
+  cout << "searching" << endl;
   if (type == 1) {
     for (std::string temp : terms) {
       if (!pairings.count(temp)) {
