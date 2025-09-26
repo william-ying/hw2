@@ -41,7 +41,6 @@ public:
 protected:
   std::vector<Product*> products;
   std::vector<User*> users;
-  std::map<std::string, std::set<Product*>> pairings;
 };
 
 #endif
