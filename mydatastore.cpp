@@ -10,9 +10,8 @@ MyDataStore::~MyDataStore() {
         for(std::set<Product*>::iterator it2 = it->second.begin();
                 it2 != it->second.end();
                 ++it2) {
-            delete it2->second;
+            delete (it2->second);
                 }
-        delete it->second;
             }
   for (Product* p : products) {
     delete p;
