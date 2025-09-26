@@ -130,7 +130,7 @@ int main(int argc, char* argv[])
 						if (u->getName() == username) {
 							int i = 0;
 							for (Product* p : u->cart) {
-								cout << "item " << i << ":" << endl << p->displayString() << endl;
+								cout << "item " << i++ << ":" << endl << p->displayString() << endl;
 							}
 							unsuccess = false;
 							break;
