@@ -129,7 +129,7 @@ int main(int argc, char* argv[])
 					for (User* u : ds.getu()) {
 						if (u->getName() == username) {
 							for (Product* p : u->cart) {
-								p->dump(cout);
+								cout << p->displayString() << endl;
 							}
 							unsuccess = false;
 							break;
