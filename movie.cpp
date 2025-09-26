@@ -11,8 +11,8 @@ Movie::Movie(const std::string name, double price, int qty, const std::string ge
 Movie::~Movie() {}
 
 std::set<std::string> Movie::keywords() const {
-  std::set<std::string> ret1 = parseStringToWords(name_);
-  ret1.insert(genre_);
+  std::set<std::string> ret1 = parseStringToWords(convToLower(name_));
+  ret1.insert(convToLower(genre_));
   return ret1;
 }
 
