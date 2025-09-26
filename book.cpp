@@ -26,7 +26,7 @@ void Book::dump(std::ostream& os) const {
   os << "book" << endl;
   os << name_ << endl;
   os << to_string(price_) << endl;
-  os << to_string(qty) << endl;
+  os << to_string(qty_) << endl;
   os << isbn_ << endl;
   os << author_ << endl;
 }
