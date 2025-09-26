@@ -146,7 +146,10 @@ int main(int argc, char* argv[])
 				if (ss >> username) {
 					for (User* u : ds.getu()) {
 						if (u->getName() == username) {
-							std::vector<Product*> newcart = u->cart;
+							std::vector<Product*> newcart;
+							for (Product* p : u->cart) {
+								newcart.push_back(p);
+							}
 							int offsetter = 0;
 							for (int i = 0; i < newcart.size(); i++) {
 								if (newcart[i - offsetter] -> getQty() == 0) {
