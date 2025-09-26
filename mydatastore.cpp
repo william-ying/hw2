@@ -34,16 +34,17 @@ void MyDataStore::addUser(User* u) {
 std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int type) {
   std::set<Product*> base;
   if (type == 1) {
-    cout << "union" << endl;
     for (std::string temp : terms) {
+      cout << temp << endl;
       std::set<Product*> comparator;
       temp = convToLower(temp);
       for (Product* p : products) {
+        cout << "product" << endl;
         if (p->keywords().count(temp) == 1) {
           comparator.insert(p);
         }
       }
-      
+      cout << endl;
       base = setUnion(base, comparator);
     }
   } else {
