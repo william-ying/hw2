@@ -138,7 +138,7 @@ int main(int argc, char* argv[])
 					}
 				}
 				if (unsuccess) {
-					cout << "Invalid request" << endl;
+					cout << "Invalid username" << endl;
 				}
 			} else if ( cmd == "BUYCART") {
 				string username;
@@ -166,7 +166,7 @@ int main(int argc, char* argv[])
 					}
 				}
 				if (unsuccess) {
-					cout << "Invalid request" << endl;
+					cout << "Invalid username" << endl;
 				}
 			}
 
