@@ -36,7 +36,7 @@ std::vector<Product*> MyDataStore::search(std::vector<std::string>& terms, int t
   // cout << "start search" << endl;
   if (type == 1) {
     for (std::string temp : terms) {
-      cout << temp << endl;
+      // cout << temp << endl;
       std::set<Product*> comparator;
       temp = convToLower(temp);
       for (Product* p : products) {
